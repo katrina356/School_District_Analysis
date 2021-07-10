@@ -36,7 +36,7 @@ When you replace the grades for the 9th graders and re-calculate the total stude
 There is no impact on the rankings of the schools.  Thomas Highschool, despite the changes, remained as the 2nd ranked overall best performing school.  All other schools remained in the same ranking position
 
 Thomas High School results after modification and ranking:
-![Top 5 Schools](Top5_Schools.png)
+![Top 5 Schools](/Resources/Top5_Schools.png)
 
 ### Impact to Other Measurements:
 In the original and post analysis the following data points were analyzed.  Changes in the below measurements were not significant between the two data sets.
