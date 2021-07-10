@@ -1,7 +1,13 @@
 # School_District_Analysis
 
 ## Overview
-The primary purpose of this analysis is to analyze the impact of academic dishonesty on a data set of school results.  During this module we performed an initial analysis on 15 schools to compare their performance and understand what may contribute to a school being a "high" performer.  Additional information came to light that indicated their may be a case of academic dishonesty in one of the schools.  As such we performed a secondary analysis removing the data that was in question (the math and reading scores of 9th graders in Thomas high school).  The below summarizes the impact on the results by removing this data
+The primary purpose of this analysis is to analyze the impact of removing data from a data set.  This analysis is performed by reviewing data points of the original data set, removing a set of data and then running the same analysis again.  During this module we performed an initial analysis on 15 schools to compare their performance and understand what may contribute to a school being a "high" performer.  Additional information came to light that indicated their may be a case of academic dishonesty in one of the schools.  As such we performed a secondary analysis removing the data that was in question (the math and reading scores of 9th graders in Thomas high school).  
+
+  - The code was modified by replacing the Thomas High School 9th grade scores with Nan, 
+  - recalculating the students: `student_count_T9 = sum((school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["grade"] == "9th"))`
+  - calculating a new student count `new_student_count = student_count - student_count_T9`
+  - Replacing the results for Thomas High School `per_school_summary_df = per_school_summary_df.replace({per_school_summary_df.loc["Thomas High School", "% Passing Math"]: passing_math_percent_THS})`
+
 
 ## Results of Removing Thomas High School 9th Grade Results
 
@@ -12,7 +18,11 @@ The impact of replacing the 9th Grade scores with Nan and recalculating the numb
  - % passing reading changed from 85.8% to 85.7%
  - % overall passing both reading and math changed from 65.2% to 64.9%
 
-Insert pictures here
+Original District Summary
+![Original_District_Summary](/Resources/District_Summary_Original.png)
+
+New District Summary
+![District Summary](/Resources/District Summary.png)
 
 ### Impact to Thomas High School Data Points
 When you replace the grades for the 9th graders and re-calculate the total students for Thomas High School the impact on the measurements is insignificant
@@ -25,8 +35,11 @@ When you replace the grades for the 9th graders and re-calculate the total stude
 ### School Summary Impact:
 There is no impact on the rankings of the schools.  Thomas Highschool, despite the changes, remained as the 2nd ranked overall best performing school.  All other schools remained in the same ranking position
 
+Thomas High School results after modification and ranking:
+![Top 5 Schools](Top5_Schools.png)
+
 ### Impact to Other Measurements:
-In the original and post analysis the following data points were analyzed.  Any changes in the below measurements were not significant between the two data sets.
+In the original and post analysis the following data points were analyzed.  Changes in the below measurements were not significant between the two data sets.
   - Math and Reading scores by grade
   - Scores by school spending
   - Scores by school size
