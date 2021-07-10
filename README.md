@@ -22,7 +22,7 @@ Original District Summary
 ![Original_District_Summary](/Resources/District_Summary_Original.png)
 
 New District Summary
-![District Summary](/Resources/District Summary.png)
+![District_Summary](/Resources/District Summary.png)
 
 ### Impact to Thomas High School Data Points
 When you replace the grades for the 9th graders and re-calculate the total students for Thomas High School the impact on the measurements is insignificant
