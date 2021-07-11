@@ -1,11 +1,11 @@
 # School_District_Analysis
 
 ## Overview
-The primary purpose of this analysis is to analyze the impact of removing data from a data set.  This analysis is performed by reviewing data points of the original data set, removing a set of data and then running the same analysis again.  During this module we performed an initial analysis on 15 schools to compare their performance and understand what may contribute to a school being a "high" performer.  Additional information came to light that indicated their may be a case of academic dishonesty in one of the schools.  As such we performed a secondary analysis removing the data that was in question (the math and reading scores of 9th graders in Thomas high school).  
+The primary purpose of this analysis was to analyze the impact of removing potentially faulty data from a data set.  During this module we performed an initial analysis on 15 schools to compare their performance and understand what may contribute to a school being a "high" performer.  Additional information came to light that indicated their may be a case of academic dishonesty in one of the schools.  As such we performed a secondary analysis removing the data that was in question (the math and reading scores of 9th graders in Thomas high school).  The different code needed for these changes are partially listed below.
 
-  - The code was modified by replacing the Thomas High School 9th grade scores with Nan, 
-  - recalculating the students: `student_count_T9 = sum((school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["grade"] == "9th"))`
-  - calculating a new student count `new_student_count = student_count - student_count_T9`
+  - Replacing the Thomas High School 9th grade scores with Nan (this code was also modified for the math scores and overall scores: `student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan`
+  - Recalculating the students: `student_count_T9 = sum((school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["grade"] == "9th"))`
+  - Ralculating a new student count `new_student_count = student_count - student_count_T9`
   - Replacing the results for Thomas High School `per_school_summary_df = per_school_summary_df.replace({per_school_summary_df.loc["Thomas High School", "% Passing Math"]: passing_math_percent_THS})`
 
 
